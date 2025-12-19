@@ -126,7 +126,7 @@
                             <div class="panel panel-default">
                             <div class="panel-body" style="padding: 0;">
  <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d187654.5427187123!2d23.14922114704533!3d42.69532822797693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa86829469509d%3A0x6a0904d9845349e3!2z0KHQvtGE0LjRjw!5e0!3m2!1sbg!2sbg!4v1710000000000!5m2!1sbg!2sbg" 
+            src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2931.803586043206!2d23.357805876940315!3d42.707879513055246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8f7bbc1250ed%3A0x8ab31877abf0fc41!2z0KHRgtC10YTQsNC9INCa0LDRgNCw0LTQttCwLCDRg9C7LiDigJ7Qm9GP0YHQutC-0LLQtdGG4oCcIDI0LCAxNTEwINCh0L7RhNC40Y8!5e0!3m2!1sbg!2sbg!4v1766166159554!5m2!1sbg!2sbg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             width="100%" 
             height="500" 
             style="border:0;" 
