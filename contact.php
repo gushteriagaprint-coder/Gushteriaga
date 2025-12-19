@@ -1,21 +1,8 @@
-<form action="https://formspree.io/f/if0_40717550" method="POST">
-  <label for="name">Вашето Име:</label>
-  <input type="text" id="name" name="name" placeholder="Въведете вашето име" required>
-
-  <label for="email">Вашият Имейл:</label>
-  <input type="email" id="email" name="_replyto" placeholder="Въведете вашия имейл" required>
-
-  <label for="message">Вашето Съобщение:</label>
-  <textarea id="message" name="message" placeholder="Напишете вашето съобщение" required></textarea>
-
-  <button type="submit" name="submit">Изпрати Съобщение</button>
-</form>
-
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en">
+<html lang="bg">
     <!--<![endif]-->
     <head>
         <!-- Title -->
@@ -124,9 +111,9 @@
   <input type="email" id="email" name="_replyto" placeholder="Въведете вашия имейл" required>
 
   <label for="message">Вашето Съобщение:</label>
-  <textarea id="message" name="message" placeholder="Напишете вашето съобщение" required></textarea>
+  <textarea id="message" name="message" class="form-control" rows="5" placeholder="Напишете вашето съобщение" required></textarea>
 
-  <button type="submit" name="submit">Изпрати Съобщение</button>
+  <button type="submit" class="btn btn-primary">Изпрати Съобщение</button>
 </form>
              <!-- End Contact Form -->
                             <!-- End Main Content -->
