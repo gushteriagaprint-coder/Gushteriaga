@@ -7,11 +7,7 @@
 
   <label for="message">Вашето Съобщение:</label>
   <textarea id="message" name="message" placeholder="Напишете вашето съобщение" required></textarea>
-
-  <label for="human">Колко е 3 + 6? (Антибот защита):</label>
-  <input type="text" id="human" name="human" placeholder="Вашият отговор" required>
-
-  <button type="submit" name="submit">Изпрати Съобщение</button>
+ <button type="submit" name="submit">Изпрати Съобщение</button>
 </form>
 
 <!DOCTYPE html>
