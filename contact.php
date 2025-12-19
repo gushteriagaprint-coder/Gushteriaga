@@ -1,44 +1,19 @@
-<?php
-	if (isset($_POST["submit"])) {
-		$name = $_POST['name'];
-		$email = $_POST['email'];
-		$message = $_POST['message'];
-		$human = intval($_POST['human']);
-		$from = 'Относно'; 
-		$to = 'gushteriaga.office@gmail.com'; 
-		$subject = 'Съобщение от форма за контакт ';
-		
-		$body ="от: $name\n E-Mail: $email\n Съобщение:\n $message\n От IP:\n {$_SERVER['REMOTE_ADDR']}\r\n\r\n От адрес:  {$_SERVER['SERVER_NAME']}{$_SERVER['REQUEST_URI']}";
+<form action="https://formspree.io/f/if0_40717550" method="POST">
+  <label for="name">Вашето Име:</label>
+  <input type="text" id="name" name="name" placeholder="Въведете вашето име" required>
 
-		// Check if name has been entered
-		if (!$_POST['name']) {
-			$errName = 'Моля, въведете вашето име.';
-		}
-		
-		// Check if email has been entered and is valid
-		if (!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-			$errEmail = 'Моля въведете валиден имейл!';
-		}
-		
-		//Check if message has been entered
-		if (!$_POST['message']) {
-			$errMessage = 'Моля въведете вашето съобщение';
-		}
-		//Check if simple anti-bot test is correct
-		if ($human !== 9) {
-			$errHuman = 'Вашият отговор е грешен!';
-		}
+  <label for="email">Вашият Имейл:</label>
+  <input type="email" id="email" name="_replyto" placeholder="Въведете вашия имейл" required>
 
-// If there are no errors, send the email
-if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
-	if (mail ($to, $subject, $body, $from)) {
-		$result='<div class="alert alert-success">Благодарим ви! Ще ви отговорим възможно най-скоро.</div>';
-	} else {
-		$result='<div class="alert alert-danger">Съжаляваме, появи се грешка при изпращането на писмото. Моля, опитайте отново по-късно.</div>';
-	}
-}
-	}
-?>
+  <label for="message">Вашето Съобщение:</label>
+  <textarea id="message" name="message" placeholder="Напишете вашето съобщение" required></textarea>
+
+  <label for="human">Колко е 3 + 6? (Антибот защита):</label>
+  <input type="text" id="human" name="human" placeholder="Вашият отговор" required>
+
+  <button type="submit" name="submit">Изпрати Съобщение</button>
+</form>
+
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
