@@ -124,10 +124,18 @@
                             <!-- Recent Posts -->
                             <!-- About -->
                             <div class="panel panel-default">
-                            <div class="panel-body">
- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2931.804979973996!2d23.36037000000001!3d42.70785000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8f7bbbd91483%3A0x85c542deddf0b45a!2z0JPQo9Cp0JXQoNCv0JPQkA!5e0!3m2!1sbg!2sus!4v1402658303234" style="overflow: hidden; height: 500 px; width: 100%; position: relative;" width="345" height="500" frameborder="0" ></iframe>
-                                </div>
-                            </div>
+                            <div class="panel-body" style="padding: 0;">
+ <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d187654.5427187123!2d23.14922114704533!3d42.69532822797693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa86829469509d%3A0x6a0904d9845349e3!2z0KHQvtGE0LjRjw!5e0!3m2!1sbg!2sbg!4v1710000000000!5m2!1sbg!2sbg" 
+            width="100%" 
+            height="500" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
                             <!-- End About -->
                             
                             <!-- End recent Posts -->
