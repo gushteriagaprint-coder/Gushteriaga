@@ -14,8 +14,7 @@
         <meta name="author" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <!-- Favicon -->
-        <link rel="shortcut icon" href="https://gushteriaga.com/" />
-        <link rel="shortcut icon" type="image/png" href="G_logo.png"/>
+        <link rel="shortcut icon" type="image/png" href="assets/img/logoG.png"/>
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <!-- Template CSS -->
@@ -328,16 +327,14 @@ document.oncontextmenu = function(e){
           <!--END disable right click-->
 		<script>
   (function() {
-    // Разделяме имейла на части, за да не го разпознаят ботовете
     var user = "gushteriaga.office";
     var domain = "gmail.com";
-    var element = document.getElementById('email-protected');
-    
-    if (element) {
-      var emailAddr = user + "@" + domain;
-      // Създаваме кликаем линк
-      element.innerHTML = '<a href="mailto:' + emailAddr + '">' + emailAddr + '</a>';
-    }
+    var emailAddr = user + "@" + domain;
+    // Търсим всички елементи, които трябва да съдържат имейла
+    var elements = document.querySelectorAll('#email-protected');
+    elements.forEach(function(el) {
+       el.innerHTML = '<a href="mailto:' + emailAddr + '">' + emailAddr + '</a>';
+    });
   })();
 </script>
     </body>
