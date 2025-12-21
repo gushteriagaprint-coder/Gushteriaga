@@ -70,7 +70,7 @@
                                        <a href="portfolio-G.html" class="fa-th ">ГАЛЕРИЯ</a>
                                     </li>
                                     <li>
-                                        <a href="contact.php" class="fa-location-arrow ">КОНТАКТ</a>
+                                        <a href="contact.html" class="fa-location-arrow ">КОНТАКТ</a>
                                     </li>
                                 </ul>
                             </div>
@@ -290,7 +290,7 @@
                         <!-- End Footer Menu -->
                         <!-- Copyright -->
                         <div id="copyright" class="col-md-4">
-                            <p class="pull-right">&copy; 2024 Гущеряга ЕООД</p>
+                            <p class="pull-right">© <span id="current-year"></span> Гущеряга ЕООД</p>
                         </div>
                         <!-- End Copyright -->
                     </div>
@@ -322,6 +322,9 @@ document.oncontextmenu = function(e){
 		return false
 }
 </script>
+		<script>
+                document.getElementById("current-year").innerHTML = new Date().getFullYear();
+            </script>
           <!--END disable right click-->
     </body>
 </html>
