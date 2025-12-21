@@ -155,7 +155,7 @@
                 document.getElementById("current-year").innerHTML = new Date().getFullYear();
             </script>
 <script>
-  window.addEventListener("load", function() { // Променено на 'load' за по-сигурно
+  window.addEventListener("load", function() {
     var form = document.getElementById("G-form");
     var status = document.getElementById("status");
 
@@ -180,12 +180,10 @@
           status.innerHTML = "Благодарим ви! Съобщението е изпратено успешно.";
           status.style.color = "green";
           form.reset();
-        // Таймер за скриване на съобщението след 5 секунди
+          // Таймер за скриване на съобщението след 5 секунди
           setTimeout(function() {
             status.innerHTML = "";
           }, 5000); 
-
-        } else { ... }
         } else {
           status.innerHTML = "Опа! Проблем при изпращането. Моля, проверете полетата.";
           status.style.color = "red";
@@ -201,6 +199,7 @@
 </script>
     </body>
 </html>
+
 
 
 
