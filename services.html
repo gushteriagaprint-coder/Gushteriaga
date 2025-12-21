@@ -204,7 +204,7 @@
                         <!-- Contact Details -->
                         <div class="col-md-4">
                             <h3 class="margin-bottom-10">
-                            <span class="fa-envelope"></span><a href="mailto:office@gushteriaga.com" id="mail">office@gushteriaga.com</a></h3>
+                             <span class="fa-envelope"></span><span id="email-protected"></span></h3>
                         </div>
                         <!-- End Contact Details -->
                         <!-- Sample Menu -->
@@ -264,6 +264,18 @@ document.oncontextmenu = function(e){
 	if (target.tagName == "IMG" || (target.tagName == 'A' && target.firstChild.tagName == 'IMG'))
 		return false
 }
+</script>
+		<script>
+  (function() {
+    var user = "gushteriaga.office";
+    var domain = "gmail.com";
+    var emailAddr = user + "@" + domain;
+    // Търсим всички елементи, които трябва да съдържат имейла
+    var elements = document.querySelectorAll('#email-protected');
+    elements.forEach(function(el) {
+       el.innerHTML = '<a href="mailto:' + emailAddr + '">' + emailAddr + '</a>';
+    });
+  })();
 </script>
           <!--END disable right click-->
     </body>
