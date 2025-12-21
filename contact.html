@@ -169,6 +169,14 @@
         <script src="assets/js/jquery.slicknav.js"></script>
 
         <script>
+            $(document).ready(function(){
+        // Инициализация на мобилното меню
+        if ($.fn.slicknav) {
+            $('#hornavmenu').slicknav({
+                prependTo: '#hornav',
+                label: 'МЕНЮ' // Можете да смените текста на бутона
+            });
+        }
             // 1. Текуща година
             document.getElementById("current-year").innerHTML = new Date().getFullYear();
 
