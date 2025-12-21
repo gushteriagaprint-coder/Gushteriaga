@@ -142,15 +142,15 @@
                 document.getElementById("current-year").innerHTML = new Date().getFullYear();
             </script>
 <script>
-  // Изчакваме цялата страница да се зареди първо
   window.addEventListener("DOMContentLoaded", function() {
-    var form = document.getElementById("G-form");
+    var form = document.getElementById("my-form");
+    
+    // Ако нямаш <p id="status"></p>, този код ще го създаде сам!
     var status = document.getElementById("status");
-
-    // Проверка дали формата изобщо съществува
-    if (!form) {
-        console.error("Грешка: Не намерих форма с id='my-form'");
-        return;
+    if (!status) {
+        status = document.createElement("p");
+        status.id = "status";
+        form.after(status);
     }
 
     async function handleSubmit(event) {
@@ -158,6 +158,7 @@
       var data = new FormData(event.target);
       
       status.innerHTML = "Изпращане...";
+      status.style.color = "black"; // Нулиране на цвета
 
       fetch(event.target.action, {
         method: form.method,
@@ -166,20 +167,28 @@
       }).then(response => {
         if (response.ok) {
           status.innerHTML = "Благодарим ви! Съобщението е изпратено.";
+          status.style.color = "green"; // Успех в зелено
           form.reset();
         } else {
-          status.innerHTML = "Грешка при изпращането.";
+          status.innerHTML = "Опа! Имаше проблем. Проверете полетата.";
+          status.style.color = "red";
         }
       }).catch(error => {
-        status.innerHTML = "Проблем със свързването.";
+        status.innerHTML = "Грешка при свързването с мрежата.";
+        status.style.color = "red";
       });
     }
 
-    form.addEventListener("submit", handleSubmit);
+    if (form) {
+      form.addEventListener("submit", handleSubmit);
+    } else {
+      console.error("Формата с id='my-form' не е намерена!");
+    }
   });
 </script>
     </body>
 </html>
+
 
 
 
