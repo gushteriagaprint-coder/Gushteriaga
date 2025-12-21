@@ -1,51 +1,42 @@
-
-/* Portfolio */
+/* Portfolio - Добавена проверка за Isotope */
 $(window).load(function() {
     var $cont = $('.portfolio-group');
-    
-    $cont.isotope({
-        itemSelector: '.portfolio-group .portfolio-item',
-        masonry: {columnWidth: $('.isotope-item:first').width(), gutterWidth: -20, isFitWidth: true},
-        filter: '*',
-    });
-
-    $('.portfolio-filter-container a').click(function() {
+    if ($cont.length > 0 && $.fn.isotope) {
         $cont.isotope({
-            filter: this.getAttribute('data-filter')
+            itemSelector: '.portfolio-group .portfolio-item',
+            masonry: {columnWidth: $('.isotope-item:first').width(), gutterWidth: -20, isFitWidth: true},
+            filter: '*',
         });
 
-        return false;
-    });
+        $('.portfolio-filter-container a').click(function() {
+            $cont.isotope({
+                filter: this.getAttribute('data-filter')
+            });
+            return false;
+        });
+    }
 
     var lastClickFilter = null;
     $('.portfolio-filter a').click(function() {
-
-        //first clicked we don't know which element is selected last time
         if (lastClickFilter === null) {
             $('.portfolio-filter a').removeClass('portfolio-selected');
-        }
-        else {
+        } else {
             $(lastClickFilter).removeClass('portfolio-selected');
         }
-
         lastClickFilter = this;
         $(this).addClass('portfolio-selected');
     });
-
 });
 
-/* Image Hover  - Add hover class on hover */
+/* Image Hover - Добавена проверка за Modernizr */
 $(document).ready(function(){
-    if (Modernizr.touch) {
-        // show the close overlay button
+    if (typeof Modernizr !== 'undefined' && Modernizr.touch) {
         $(".close-overlay").removeClass("hidden");
-        // handle the adding of hover class when clicked
         $(".image-hover figure").click(function(e){
             if (!$(this).hasClass("hover")) {
                 $(this).addClass("hover");
             }
         });
-        // handle the closing of the overlay
         $(".close-overlay").click(function(e){
             e.preventDefault();
             e.stopPropagation();
@@ -54,67 +45,43 @@ $(document).ready(function(){
             }
         });
     } else {
-        // handle the mouseenter functionality
         $(".image-hover figure").mouseenter(function(){
             $(this).addClass("hover");
-        })
-        // handle the mouseleave functionality
-        .mouseleave(function(){
+        }).mouseleave(function(){
             $(this).removeClass("hover");
         });
     }
 });
 
-// thumbs animations
+/* Thumbs animations */
 $(function () {
-    
-    $(".thumbs-gallery i").animate({
-             opacity: 0
-    
-          }, {
-             duration: 300,
-             queue: false
-          });
+    $(".thumbs-gallery i").css("opacity", 0);
 
-   $(".thumbs-gallery").parent().hover(
-       function () {},
-       function () {
-          $(".thumbs-gallery i").animate({
-             opacity: 0
-          }, {
-             duration: 300,
-             queue: false
-          });
-   });
- 
-   $(".thumbs-gallery i").hover(
-      function () {
-          $(this).animate({
-             opacity: 0
-    
-          }, {
-             duration: 300,
-             queue: false
-          });
-
-          $(".thumbs-gallery i").not( $(this) ).animate({
-             opacity: 0.4         }, {
-             duration: 300,
-             queue: false
-          });
-      }, function () {
-      }
-   );
-
+    $(".thumbs-gallery i").hover(
+        function () {
+            $(this).stop().animate({ opacity: 0 }, 300);
+            $(".thumbs-gallery i").not($(this)).stop().animate({ opacity: 0.4 }, 300);
+        }, 
+        function () {
+            $(".thumbs-gallery i").stop().animate({ opacity: 0 }, 300);
+        }
+    );
 });
 
-// Mobile Menu
-    $(function(){
-        $('#hornavmenu').slicknav();
+/* Mobile Menu - Инициализация */
+$(function(){
+    if ($.fn.slicknav) {
+        $('#hornavmenu').slicknav({
+            prependTo: '#hornav',
+            label: 'МЕНЮ'
+        });
         $( "div.slicknav_menu" ).addClass( "hidden-lg" );
-    });
+    }
+});
 
-// Sticky Div
-  $(window).load(function(){
-    $("#hornav").sticky({ topSpacing: 0 });
-  );
+/* Sticky Div - Добавена проверка за Sticky */
+$(window).load(function(){
+    if ($.fn.sticky) {
+        $("#hornav").sticky({ topSpacing: 0 });
+    }
+});
