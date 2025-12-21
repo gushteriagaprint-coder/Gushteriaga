@@ -94,7 +94,7 @@ function phpfmg_form( $sErr = false ){
                                         <a href="zapitvane.php" class="fa-comments-o active">ЗАПИТВАНЕ</a>
                                     </li>
                                      <li>
-                                        <a href="contact.php" class="fa-location-arrow ">КОНТАКТ</a>
+                                        <a href="contact.html" class="fa-location-arrow ">КОНТАКТ</a>
                                     </li>
                                     
                                 </ul>
@@ -448,7 +448,7 @@ hr.sectionbreak{
                         <!-- End Footer Menu -->
                         <!-- Copyright -->
                         <div id="copyright" class="col-md-4">
-                            <p class="pull-right">&copy; 2024 Гущеряга ЕООД</p>
+                            <p class="pull-right">© <span id="current-year"></span> Гущеряга ЕООД</p>
                         </div>
                         <!-- End Copyright -->
                     </div>
@@ -472,6 +472,9 @@ hr.sectionbreak{
             <!-- Modernizr -->
             <script src="assets/js/modernizr.custom.js" type="text/javascript"></script>
             <!-- End JS -->
+	 <script>
+                document.getElementById("current-year").innerHTML = new Date().getFullYear();
+            </script>
             <!--Responsive menu-->
             <script>
 function myFunction() {
