@@ -153,7 +153,7 @@
                                        <a href="portfolio.html" class="fa-th active">ГАЛЕРИЯ</a>
                                     </li>
                                     <li>
-                                        <a href="contact.php" class="fa-location-arrow ">КОНТАКТ</a>
+                                        <a href="contact.html" class="fa-location-arrow ">КОНТАКТ</a>
                                     </li>
                                    
                                 </ul>
@@ -252,7 +252,7 @@
                         <!-- End Footer Menu -->
                         <!-- Copyright -->
                         <div id="copyright" class="col-md-4">
-                            <p class="pull-right">&copy; 2024 Гущеряга ЕООД</p>
+                            <p class="pull-right">© <span id="current-year"></span> Гущеряга ЕООД</p>
                         </div>
                         <!-- End Copyright -->
                     </div>
@@ -276,6 +276,9 @@
    hs.dimmingOpacity = 0.75;
         </script>
             <!--END Dimming the background-->
+		<script>
+                document.getElementById("current-year").innerHTML = new Date().getFullYear();
+            </script>
             <!--disable right click-->
 		<script>
 document.oncontextmenu = function(e){
