@@ -117,4 +117,4 @@ $(function () {
 // Sticky Div
   $(window).load(function(){
     $("#hornav").sticky({ topSpacing: 0 });
-  });
+  );
