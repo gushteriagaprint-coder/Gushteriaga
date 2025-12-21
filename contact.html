@@ -142,46 +142,44 @@
                 document.getElementById("current-year").innerHTML = new Date().getFullYear();
             </script>
 <script>
-  var form = document.getElementById("G-form");
-  
-  async function handleSubmit(event) {
-    event.preventDefault(); // Спира презареждането на страницата
+  // Изчакваме цялата страница да се зареди първо
+  window.addEventListener("DOMContentLoaded", function() {
+    var form = document.getElementById("G-form");
     var status = document.getElementById("status");
-    var data = new FormData(event.target);
-    
-    // Показваме на потребителя, че нещо се случва
-    status.innerHTML = "Изпращане...";
 
-    fetch(event.target.action, {
-      method: form.method,
-      body: data,
-      headers: {
-          'Accept': 'application/json'
-      }
-    }).then(response => {
-      if (response.ok) {
-        // УСПЕХ: Тук казвате какво да стане
-        status.innerHTML = "Благодарим ви! Съобщението е изпратено успешно.";
-        form.reset(); // Изчиства полетата на формата
-      } else {
-        // ГРЕШКА от страна на сървъра
-        response.json().then(data => {
-          if (Object.hasOwn(data, 'errors')) {
-            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
-          } else {
-            status.innerHTML = "Опа! Имаше проблем при изпращането.";
-          }
-        })
-      }
-    }).catch(error => {
-      // ГРЕШКА в мрежата (например няма интернет)
-      status.innerHTML = "Опа! Имаше проблем при свързването със сървъра.";
-    });
-  }
-  
-  form.addEventListener("submit", handleSubmit)
+    // Проверка дали формата изобщо съществува
+    if (!form) {
+        console.error("Грешка: Не намерих форма с id='my-form'");
+        return;
+    }
+
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var data = new FormData(event.target);
+      
+      status.innerHTML = "Изпращане...";
+
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Благодарим ви! Съобщението е изпратено.";
+          form.reset();
+        } else {
+          status.innerHTML = "Грешка при изпращането.";
+        }
+      }).catch(error => {
+        status.innerHTML = "Проблем със свързването.";
+      });
+    }
+
+    form.addEventListener("submit", handleSubmit);
+  });
 </script>
         </div>
     </body>
 </html>
+
 
