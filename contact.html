@@ -97,11 +97,11 @@
                             <div class="headline"><h2>Пишете ни</h2></div><br>
                             <form id="G-form" method="POST" action="https://formspree.io/f/mgowyygp">
                                 <label>Вашето име: <span class="color-red">*</span></label>
-                                <input class="form-control margin-bottom-20" type="text" name="name" required>
+                                <input class="form-control margin-bottom-20" type="text" name="name" autocomplete="name" required>
                                 <label>Вашият имейл: <span class="color-red">*</span></label>
-                                <input type="email" class="form-control margin-bottom-20" name="_replyto" required>
+                                <input type="email" class="form-control margin-bottom-20" name="_replyto" autocomplete="_replyto" required>
                                 <label>Съобщение: <span class="color-red">*</span></label>
-                                <textarea rows="6" class="form-control margin-bottom-20" name="message" required></textarea>
+                                <textarea rows="6" class="form-control margin-bottom-20" name="message" autocomplete="message" required></textarea>
                                 <input type="text" name="_gotcha" style="display:none;">
                                 <p id="status"></p>
                                 <button type="submit" class="btn btn-primary">Изпрати</button>
@@ -193,6 +193,7 @@
 </script>
     </body>
 </html>
+
 
 
 
