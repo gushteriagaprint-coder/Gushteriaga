@@ -68,20 +68,19 @@ $(function () {
     );
 });
 
-/* Mobile Menu - Инициализация */
+/* Mobile Menu - Универсална инициализация */
 $(function(){
     if ($.fn.slicknav) {
+        // Проверяваме дали съществува #hornav, ако не - използваме body като резервен вариант
+        var menuParent = $('#hornav').length > 0 ? '#hornav' : 'body';
+        
         $('#hornavmenu').slicknav({
-            prependTo: '#hornav',
-            label: 'МЕНЮ'
+            prependTo: menuParent,
+            label: 'МЕНЮ',
+            allowParentLinks: true // Позволява кликане върху родителските линкове
         });
+        
+        // Скриваме мобилното меню на големи екрани
         $( "div.slicknav_menu" ).addClass( "hidden-lg" );
-    }
-});
-
-/* Sticky Div - Добавена проверка за Sticky */
-$(window).load(function(){
-    if ($.fn.sticky) {
-        $("#hornav").sticky({ topSpacing: 0 });
     }
 });
