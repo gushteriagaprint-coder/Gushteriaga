@@ -31,7 +31,7 @@
             .fax { display: none; }
             #status { padding: 10px; border-radius: 4px; font-weight: bold; transition: all 0.3s ease; }
         </style>
-
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
     <body>
         <div id="body-bg">
@@ -103,6 +103,14 @@
                                 <label for="user-message">Съобщение: <span class="color-red">*</span></label>
                                 <textarea id="user-message" rows="6" class="form-control margin-bottom-20" name="message" autocomplete="message" required></textarea>
                                 <input type="text" name="_gotcha" style="display:none;">
+     <label for="user-message">Съобщение: <span class="color-red">*</span></label>
+<textarea id="user-message" rows="6" class="form-control margin-bottom-20" name="message" autocomplete="message" required></textarea>
+
+<div class="g-recaptcha" data-sitekey="6Ldh4T0sAAAAAIf1hXkVY9B7SM6TH211YJFup0PF" style="margin-bottom: 20px;"></div>
+
+<input type="text" name="_gotcha" style="display:none;">
+<p id="status"></p>
+<button type="submit" class="btn btn-primary">Изпрати</button>                           
                                 <p id="status"></p>
                                 <button type="submit" class="btn btn-primary">Изпрати</button>
                             </form>
@@ -193,6 +201,7 @@
 </script>
     </body>
 </html>
+
 
 
 
