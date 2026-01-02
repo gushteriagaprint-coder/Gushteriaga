@@ -3,233 +3,262 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en">
-    <!--<![endif]-->
-    <head>
-        <!-- Title -->
-        <title>Контакт</title>
-        <!-- Meta -->
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="description" content="Печатница Гущеряга предлага офсетов печат и дизайн на рекламни и офис материали, на пълната гама от хартии, картони и пликове.Специфични фирмени формуляри от химизирана хартия със номерация и перфорация.">
-        <meta name="keywords" content="Печатница, Печатница Гущеряга, печат, print, пликове, визитки, фактури, бланки, брошури, формуляри, набор, сгъване, картички, покани, дизайн, графичен дизайн, предпечат, календари, фирмени календари, офсетов печат, номерация, перфорация, флаери, листовки, електронен монтаж на файлове, подложки за хранене"/>
-        <meta name="author" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-        <!-- Favicon -->
-        <link rel="shortcut icon" type="image/png" href="assets/img/logoG.png"/>
-        <!-- Bootstrap Core CSS -->
-        <link rel="stylesheet" href="assets/css/bootstrap.css">
-        <!-- Template CSS -->
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/font-awesome.css">
-        <link rel="stylesheet" href="assets/css/nexus.css">
-        <link rel="stylesheet" href="assets/css/responsive.css">
-        <!-- Google Fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet" type="text/css"> 
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="assets/css/effect11.css">
-        <style>
-            .fax { display: none; }
-            #status { padding: 10px; border-radius: 4px; font-weight: bold; transition: all 0.3s ease; }
-            #status {
-    display: none; /* Скрито по подразбиране */
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 8px;
-    text-align: center;
-    font-family: sans-serif;
-    transition: all 0.3s ease;
-}
+<!--<![endif]-->
 
-/* Стил при успешно изпращане */
-#status.success {
-    display: block;
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-
-/* Стил при грешка */
-#status.error {
-    display: block;
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
-        </style>
-        
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    </head>
-    <body>
-        <div id="body-bg">
-                    <!-- Phone/Email -->
-            <div id="pre-header" class="background-gray-lighter">
-                <div class="container no-padding">
-                    <div class="row hidden-xs"> </div>
-                </div>
-            </div>
-            <!-- End Phone/Email -->
-            <!-- Header -->
-            <div id="header">
-                <div class="container">
-                    <div class="row">
-                        <!-- Logo -->
-                        <div class="logo">
-                            <a href="index.html" title="Гущеряга">
-                                <img src="assets/img/logoG.png" alt="Logo" />
-                            </a>
-                        </div>
-                        <!-- End Logo -->
-                    </div>
-                </div>
-            </div>
-            <!-- End Header -->
-            <!-- Top Menu -->
-            <div id="hornav" class="bottom-border-shadow">
-                <div class="container no-padding border-bottom">
-                    <div class="row">
-                        <div class="col-md-8 no-padding">
-                            <div class="visible-lg">
-                                <ul id="hornavmenu" class="nav navbar-nav">
-                                    <li>
-                                        <a href="index.html" class="fa-home">НАЧАЛО</a>
-                                    </li>
-                                    <li>
-                                        <a href="services.html" class="fa-files-o">УСЛУГИ</a>
-                                    </li>
-                                    <li>
-                                       <a href="portfolio-G.html" class="fa-th ">ГАЛЕРИЯ</a>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html" class="fa-location-arrow active">КОНТАКТ</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4 no-padding">
-             <ul class="social-icons pull-right">
-                                <li class="social-tumblr">
-                                    <a href="pages-faq.html" target="_self" title="GDPR"></a>
-                                </li></ul>            
-
-        </div>
-    </div>
-</div>                              
-    </div>
-         </div>
-            <div id="content">
-              <div class="container background-white">
-                    <div class="row margin-vert-30">
-                      <div class="col-md-9 col-lg-5">
-                            <div class="headline"><h2>Пишете ни</h2></div><br>
-                            <form id="G-form" method="POST" action="https://formspree.io/f/mgowyygp">
-                                <label for="user-name">Вашето име: <span class="color-red">*</span></label>
-                                <input id="user-name" class="form-control margin-bottom-20" type="text" name="name" autocomplete="name" required>
-                                <label for="user-email">Вашият имейл: <span class="color-red">*</span></label>
-                                <input id="user-email" type="email" class="form-control margin-bottom-20" name="_replyto" autocomplete="_replyto" required>
-                                <label for="user-message">Съобщение: <span class="color-red">*</span></label>
-                                <textarea id="user-message" rows="6" class="form-control margin-bottom-20" name="message" autocomplete="message" required></textarea>
-                                <input type="text" name="_gotcha" style="display:none;">
-  <div class="g-recaptcha" data-sitekey="6Lf-8z0sAAAAAK0q2f8j32V9pglkgdHkLyHrK7Vt"></div>
-<p id="status"></p>
-<button type="submit" class="btn btn-primary">Изпрати</button>                           
-                            </form>
-                          <div id="status" style="display:none; margin-top: 20px; color: green; font-weight: bold;">
-  Благодарим ви! Съобщението беше изпратено успешно.
-</div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2931.803586043213!2d23.35780587693584!3d42.707879513055104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8f7bbc1250ed%3A0x8ab31877abf0fc41!2z0KHRgtC10YTQsNC9INCa0LDRgNCw0LTQttCwLCDRg9C7LiDigJ7Qm9GP0YHQutC-0LLQtdGG4oCcIDI0LCAxNTEwINCh0L7RhNC40Y8!5e0!3m2!1sbg!2sbg!4v1766332784270!5m2!1sbg!2sbg" style="overflow: hidden; height: 500 px; width: 100%; position: relative;" width="345" height="500" frameborder="0"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           
-           <!-- === BEGIN FOOTER === -->
-            <div id="base">
-                <div class="container bottom-border padding-vert-30">
-                    <div class="row">
-                        <!-- Disclaimer -->
-                        <div class="col-md-4">
-                            <h3 class="class margin-bottom-10">
-                                <span class="fa-phone"></span>0898 624 236</h3>
-                        </div>
-                        <!-- End Disclaimer -->
-                        <!-- Contact Details -->
-                        <div class="col-md-4">
-                            <h3 class="margin-bottom-10">
-                            <span class="fa-envelope"></span><span id="email-protected"></span></h3>
-                        </div>
-                        <!-- End Contact Details -->
-                        <!-- Sample Menu -->
-                       <div class="col-md-4 margin-bottom-20">
-                            <h3 class="margin-bottom-10"><span class="fa-link"></span>София, България</h3>
-                            <div class="clearfix">
-                            </div>
-                        </div>
-                        <!-- End Sample Menu -->
-                    </div>
-                </div>
-            </div>
-            <!-- Footer -->
-            <div id="footer" class="background-grey">
-                <div class="container">
-                    <div class="row">
-                        <!-- Footer Menu -->
-                        <div id="footermenu" class="col-md-8">
-                        <ul class="list-unstyled list-inline">
-                                <li>
-                                    <a href="pages-faq.html" target="_self">Общ регламент за защита на личните данни (GDPR)</a>
-                                </li>
-                                </ul>
-                        </div>
-                        <!-- End Footer Menu -->
-                        <!-- Copyright -->
-                        <div id="copyright" class="col-md-4">
-                            <p class="pull-right">© <span id="current-year"></span> Гущеряга ЕООД</p>
-                        </div>
-                        <!-- End Copyright -->
-
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/jquery.slicknav.js"></script> 
-<script src="assets/js/scripts.js"></script>
-<script>
-    $(document).ready(function(){
-        // Директна инициализация тук
-        if ($.fn.slicknav) {
-            $('#hornavmenu').slicknav({
-                prependTo: '#hornav',
-                label: 'МЕНЮ'
-            });
-            // Прави менюто скрито за големи екрани (аналог на кода в scripts.js)
-            $( "div.slicknav_menu" ).addClass( "hidden-lg" );
+<head>
+    <!-- Title -->
+    <title>Контакт</title>
+    <!-- Meta -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Печатница Гущеряга предлага офсетов печат и дизайн на рекламни и офис материали, на пълната гама от хартии, картони и пликове.Специфични фирмени формуляри от химизирана хартия със номерация и перфорация.">
+    <meta name="keywords" content="Печатница, Печатница Гущеряга, печат, print, пликове, визитки, фактури, бланки, брошури, формуляри, набор, сгъване, картички, покани, дизайн, графичен дизайн, предпечат, календари, фирмени календари, офсетов печат, номерация, перфорация, флаери, листовки, електронен монтаж на файлове, подложки за хранене" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/img/logoG.png" />
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/nexus.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/css/effect11.css">
+    <style>
+        .fax {
+            display: none;
         }
 
-        // Текуща година
-        var yearEl = document.getElementById("current-year");
-        if(yearEl) yearEl.innerHTML = new Date().getFullYear();
+        #status {
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
 
-        // Имейл защита
-        (function() {
-            var user = "gushteriaga.office", domain = "gmail.com", email = user + "@" + domain;
-            var el = document.getElementById('email-protected');
-            if (el) el.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
-        })();
-    });
-</script>
-                        <script>
-  var form = document.getElementById("my-form");
+        #status {
+            display: none;
+            /* Скрито по подразбиране */
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-family: sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        /* Стил при успешно изпращане */
+        #status.success {
+            display: block;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        /* Стил при грешка */
+        #status.error {
+            display: block;
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <div id="body-bg">
+        <!-- Phone/Email -->
+        <div id="pre-header" class="background-gray-lighter">
+            <div class="container no-padding">
+                <div class="row hidden-xs"> </div>
+            </div>
+        </div>
+        <!-- End Phone/Email -->
+        <!-- Header -->
+        <div id="header">
+            <div class="container">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="index.html" title="Гущеряга">
+                            <img src="assets/img/logoG.png" alt="Logo" />
+                        </a>
+                    </div>
+                    <!-- End Logo -->
+                </div>
+            </div>
+        </div>
+        <!-- End Header -->
+        <!-- Top Menu -->
+        <div id="hornav" class="bottom-border-shadow">
+            <div class="container no-padding border-bottom">
+                <div class="row">
+                    <div class="col-md-8 no-padding">
+                        <div class="visible-lg">
+                            <ul id="hornavmenu" class="nav navbar-nav">
+                                <li>
+                                    <a href="index.html" class="fa-home">НАЧАЛО</a>
+                                </li>
+                                <li>
+                                    <a href="services.html" class="fa-files-o">УСЛУГИ</a>
+                                </li>
+                                <li>
+                                    <a href="portfolio-G.html" class="fa-th ">ГАЛЕРИЯ</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html" class="fa-location-arrow active">КОНТАКТ</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 no-padding">
+                        <ul class="social-icons pull-right">
+                            <li class="social-tumblr">
+                                <a href="pages-faq.html" target="_self" title="GDPR"></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div class="container background-white">
+            <div class="row margin-vert-30">
+                <div class="col-md-9 col-lg-5">
+                    <div class="headline">
+                        <h2>Пишете ни</h2>
+                    </div><br>
+                    <form id="G-form" method="POST" action="https://formspree.io/f/mgowyygp">
+                        <label for="user-name">Вашето име: <span class="color-red">*</span></label>
+                        <input id="user-name" class="form-control margin-bottom-20" type="text" name="name" autocomplete="name" required>
+                        <label for="user-email">Вашият имейл: <span class="color-red">*</span></label>
+                        <input id="user-email" type="email" class="form-control margin-bottom-20" name="_replyto" autocomplete="_replyto" required>
+                        <label for="user-message">Съобщение: <span class="color-red">*</span></label>
+                        <textarea id="user-message" rows="6" class="form-control margin-bottom-20" name="message" autocomplete="message" required></textarea>
+                        <input type="text" name="_gotcha" style="display:none;">
+                        <div class="g-recaptcha" data-sitekey="6Lf-8z0sAAAAAK0q2f8j32V9pglkgdHkLyHrK7Vt"></div>
+                        <button type="submit" class="btn btn-primary">Изпрати</button>
+                    </form>
+                    <div id="status" style="display:none; margin-top: 20px; color: green; font-weight: bold;">
+                        Благодарим ви! Съобщението беше изпратено успешно.
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2931.803586043213!2d23.35780587693584!3d42.707879513055104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8f7bbc1250ed%3A0x8ab31877abf0fc41!2z0KHRgtC10YTQsNC9INCa0LDRgNCw0LTQttCwLCDRg9C7LiDigJ7Qm9GP0YHQutC-0LLQtdGG4oCcIDI0LCAxNTEwINCh0L7RhNC40Y8!5e0!3m2!1sbg!2sbg!4v1766332784270!5m2!1sbg!2sbg" style="overflow: hidden; height: 500 px; width: 100%; position: relative;" width="345" height="500" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- === BEGIN FOOTER === -->
+    <div id="base">
+        <div class="container bottom-border padding-vert-30">
+            <div class="row">
+                <!-- Disclaimer -->
+                <div class="col-md-4">
+                    <h3 class="class margin-bottom-10">
+                        <span class="fa-phone"></span>0898 624 236
+                    </h3>
+                </div>
+                <!-- End Disclaimer -->
+                <!-- Contact Details -->
+                <div class="col-md-4">
+                    <h3 class="margin-bottom-10">
+                        <span class="fa-envelope"></span><span id="email-protected"></span>
+                    </h3>
+                </div>
+                <!-- End Contact Details -->
+                <!-- Sample Menu -->
+                <div class="col-md-4 margin-bottom-20">
+                    <h3 class="margin-bottom-10"><span class="fa-link"></span>София, България</h3>
+                    <div class="clearfix">
+                    </div>
+                </div>
+                <!-- End Sample Menu -->
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div id="footer" class="background-grey">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Menu -->
+                <div id="footermenu" class="col-md-8">
+                    <ul class="list-unstyled list-inline">
+                        <li>
+                            <a href="pages-faq.html" target="_self">Общ регламент за защита на личните данни (GDPR)</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Footer Menu -->
+                <!-- Copyright -->
+                <div id="copyright" class="col-md-4">
+                    <p class="pull-right">© <span id="current-year"></span> Гущеряга ЕООД</p>
+                </div>
+                <!-- End Copyright -->
+
+                <script src="assets/js/jquery.min.js"></script>
+                <script src="assets/js/bootstrap.min.js"></script>
+                <script src="assets/js/jquery.slicknav.js"></script>
+                <script src="assets/js/scripts.js"></script>
+                <script>
+                    $(document).ready(function() {
+                        // Директна инициализация тук
+                        if ($.fn.slicknav) {
+                            $('#hornavmenu').slicknav({
+                                prependTo: '#hornav',
+                                label: 'МЕНЮ'
+                            });
+                            // Прави менюто скрито за големи екрани (аналог на кода в scripts.js)
+                            $("div.slicknav_menu").addClass("hidden-lg");
+                        }
+
+                        // Текуща година
+                        var yearEl = document.getElementById("current-year");
+                        if (yearEl) yearEl.innerHTML = new Date().getFullYear();
+
+                        // Имейл защита
+                        (function() {
+                            var user = "gushteriaga.office",
+                                domain = "gmail.com",
+                                email = user + "@" + domain;
+                            var el = document.getElementById('email-protected');
+                            if (el) el.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+                        })();
+                    });
+                </script>
+               <script>
+  // 1. Вземаме формата чрез правилното ID
+  var form = document.getElementById("G-form");
   
   async function handleSubmit(event) {
-    event.preventDefault(); // Спира презареждането на страницата
+    event.preventDefault(); // Спира презареждането
+    
     var status = document.getElementById("status");
     var data = new FormData(event.target);
     
-    // Изпращане на данните чрез Fetch API
+    // 2. Проверка дали reCAPTCHA е попълнена
+    var v = grecaptcha.getResponse();
+    if(v.length == 0) {
+        status.innerHTML = "❌ Моля, потвърдете, че не сте робот.";
+        status.className = "error";
+        status.style.display = "block";
+        return;
+    }
+
+    // Изпращане на данните
     fetch(event.target.action, {
       method: form.method,
       body: data,
@@ -238,42 +267,32 @@
       }
     }).then(response => {
       if (response.ok) {
-    status.innerHTML = "✨ Благодарим ви! Съобщението е изпратено успешно.";
-    status.className = "success"; // Добавя зеления стил
-    form.reset();
-    grecaptcha.reset();
-} else {
-    status.innerHTML = "❌ Упс! Имаше проблем. Моля, опитайте пак.";
-    status.className = "error"; // Добавя червения стил
-}
-        
+        status.innerHTML = "✨ Благодарим ви! Съобщението е изпратено успешно.";
+        status.className = "success";
+        status.style.display = "block";
+        form.reset(); // Изчиства полетата
+        grecaptcha.reset(); // Нулира капчата
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+          } else {
+            status.innerHTML = "❌ Упс! Имаше проблем. Моля, опитайте пак.";
+          }
+          status.className = "error";
+          status.style.display = "block";
+        })
+      }
     }).catch(error => {
-      status.innerHTML = "Упс! Имаше проблем при свързването със сървъра.";
-      status.style.color = "red";
+      status.innerHTML = "❌ Грешка при свързването със сървъра.";
+      status.className = "error";
       status.style.display = "block";
     });
   }
   
-  form.addEventListener("submit", handleSubmit)
+  form.addEventListener("submit", handleSubmit);
 </script>
-    </body>
+            </div>
+</body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
