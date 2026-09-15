@@ -2320,8 +2320,11 @@ ul.social-icons li a:hover {
 .social-yahoo a:hover {
   background-color: #ab64bc !important;
 }
-.social-tumblr a {
-  background: url(../img/social_icons/tumblr.png);
+.social-tumblr a:before {
+    content: "\f023";
+    font-family: FontAwesome;
+    font-size: 14px;
+    color: #fff;
 }
 .social-tumblr a:hover {
   background-color: #3a5976 !important;
