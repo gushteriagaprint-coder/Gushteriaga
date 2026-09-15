@@ -54,4 +54,28 @@
 	
 }
 
+/* Позициониране на катинара на мобилни устройства */
+@media (max-width: 991px) {
+    .mobile-gdpr-btn {
+        position: absolute;
+        right: 85px;
+        top: 12px;
+        z-index: 99999;
+    }
 
+    .mobile-gdpr-btn a {
+        color: #fff;
+        font-size: 18px;
+        background: #2b5c5f;
+        padding: 6px 10px;
+        border-radius: 4px;
+        display: inline-block;
+    }
+}
+
+/* Скриване на катинара на големи монитори */
+@media (min-width: 992px) {
+    .mobile-gdpr-btn {
+        display: none;
+    }
+}
