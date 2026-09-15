@@ -53,22 +53,5 @@
 
 	
 }
-@media (max-width: 991px) {
-    #hornav .social-icons {
-        position: absolute;
-        right: 80px;
-        top: 10px;
-        z-index: 9999;
-        margin: 0;
-    }
 
-    #hornav .social-icons li {
-        display: inline-block;
-    }
-
-    .slicknav_nav .social-tumblr,
-    .slicknav_menu .social-tumblr {
-        display: none !important;
-    }
-}
 
