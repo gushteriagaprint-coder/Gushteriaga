@@ -29,8 +29,8 @@
 
 @media only screen and (max-width: 959px) {
 
-}
 
+}
 
 /* #Mobile (Landscape)
 ================================================== */
@@ -46,10 +46,9 @@
 
 
 /* ==========================================================
-   MOBILE NAVIGATION FIX
-   SlickNav menu + GDPR lock on ONE 60px navigation row.
-   The original desktop .container must not create a second
-   dark/grey bar above the slideshow.
+   MOBILE NAVIGATION FIX v3
+   Menu + GDPR lock on the same 60px row.
+   The old desktop container is kept only for the GDPR link.
    ========================================================== */
 
 #hornav {
@@ -57,90 +56,84 @@
     min-height: 60px;
 }
 
-/* The original desktop navigation container is kept only
-   for the GDPR link. Remove its desktop background/height. */
+/* The desktop navigation container must not create another
+   visible navigation bar or another row. */
 #hornav > .container {
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 60px !important;
     height: 60px !important;
-    min-height: 0 !important;
+    min-height: 60px !important;
     padding: 0 !important;
     margin: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
-    z-index: 100 !important;
+    z-index: 30;
 }
 
-/* Remove the Bootstrap row from the normal document flow. */
-#hornav > .container > .row {
-    position: static !important;
-    margin: 0 !important;
-    height: 60px !important;
-}
-
-/* Desktop menu column is replaced by SlickNav. */
+/* The desktop menu column is replaced by SlickNav. */
 #hornav > .container .col-md-8 {
     display: none !important;
 }
 
-/* GDPR column occupies only the lock area. */
+/* GDPR column occupies exactly the 60px lock area. */
 #hornav > .container .col-md-4 {
-    display: block !important;
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
     width: 60px !important;
     height: 60px !important;
+    min-height: 60px !important;
     padding: 0 !important;
     margin: 0 !important;
+    float: none !important;
 }
 
-/* Remove Bootstrap/desktop spacing from the GDPR list. */
+/* Remove the extra spacing/background from the old
+   social-icons list item. */
 #hornav > .container ul.social-icons {
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
-    width: 60px !important;
-    height: 60px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* The original social icon has 5px margin and 56px size.
-   Remove that so it exactly fills the lock area. */
-#hornav > .container ul.social-icons li {
     float: none !important;
     display: block !important;
     width: 60px !important;
     height: 60px !important;
     margin: 0 !important;
     padding: 0 !important;
+    overflow: hidden !important;
 }
 
-#hornav > .container ul.social-icons li a {
+/* The original template gives social icons a 5px margin.
+   That margin is what can leave an unwanted shape below
+   the lock on mobile. */
+#hornav > .container ul.social-icons li.social-tumblr {
+    float: none !important;
     display: block !important;
     width: 60px !important;
     height: 60px !important;
     margin: 0 !important;
     padding: 0 !important;
+    overflow: hidden !important;
+    background: transparent !important;
 }
 
-/* SlickNav itself forms the complete left side of the bar. */
-#hornav > .slicknav_menu {
-    position: relative !important;
-    width: 100% !important;
-    min-height: 60px !important;
-    box-sizing: border-box !important;
-    padding: 5px !important;
+/* Keep only the actual 56x56 lock icon inside the 60x60 area. */
+#hornav > .container ul.social-icons li.social-tumblr a {
+    display: block !important;
+    width: 60px !important;
+    height: 60px !important;
     margin: 0 !important;
-    z-index: 50 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background-color: transparent !important;
+    background-image: url("../img/social_icons/tumblr.png") !important;
+    background-position: 8px 7px !important;
+    background-repeat: no-repeat !important;
+    border-radius: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
-/* Keep the MENU button away from the GDPR lock. */
-#hornav > .slicknav_menu .slicknav_btn {
-    margin-right: 65px !important;
+/* Keep the SlickNav button on the left and the lock
+   in its own 60px area on the right. */
+#hornav .slicknav_btn {
+    margin-right: 60px !important;
 }
 
 }
@@ -150,5 +143,6 @@
 ================================================== */
 
 @media only screen and (max-width: 440px) {
+
 
 }
