@@ -46,92 +46,139 @@
 
 
 /* ==========================================================
-   MOBILE NAVIGATION FIX v3
+   MOBILE NAVIGATION FIX v4
    Menu + GDPR lock on the same 60px row.
-   The old desktop container is kept only for the GDPR link.
+   The original desktop navigation container is retained only
+   as the clickable GDPR/lock area and has no visual styling.
    ========================================================== */
 
 #hornav {
     position: relative;
-    min-height: 60px;
+    min-height: 60px !important;
 }
 
-/* The desktop navigation container must not create another
-   visible navigation bar or another row. */
-#hornav > .container {
+/* Remove ALL visual/background/border effects inherited from
+   the desktop navigation container. */
+#hornav > .container,
+#hornav > .container.border-bottom {
     position: absolute;
     top: 0;
     right: 0;
     width: 60px !important;
     height: 60px !important;
     min-height: 60px !important;
-    padding: 0 !important;
     margin: 0 !important;
+    padding: 0 !important;
+
     background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+
+    border: 0 !important;
     box-shadow: none !important;
+
     z-index: 30;
 }
 
-/* The desktop menu column is replaced by SlickNav. */
+/* Remove Bootstrap row spacing/clearfix effects. */
+#hornav > .container > .row {
+    width: 60px !important;
+    height: 60px !important;
+    min-height: 60px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Desktop navigation column is replaced by SlickNav. */
 #hornav > .container .col-md-8 {
     display: none !important;
 }
 
-/* GDPR column occupies exactly the 60px lock area. */
+/* GDPR column = exactly the 60x60 lock area. */
 #hornav > .container .col-md-4 {
+    display: block !important;
     width: 60px !important;
     height: 60px !important;
     min-height: 60px !important;
-    padding: 0 !important;
     margin: 0 !important;
+    padding: 0 !important;
     float: none !important;
-}
 
-/* Remove the extra spacing/background from the old
-   social-icons list item. */
-#hornav > .container ul.social-icons {
-    float: none !important;
-    display: block !important;
-    width: 60px !important;
-    height: 60px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-}
-
-/* The original template gives social icons a 5px margin.
-   That margin is what can leave an unwanted shape below
-   the lock on mobile. */
-#hornav > .container ul.social-icons li.social-tumblr {
-    float: none !important;
-    display: block !important;
-    width: 60px !important;
-    height: 60px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
     background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+
+    border: 0 !important;
+    box-shadow: none !important;
 }
 
-/* Keep only the actual 56x56 lock icon inside the 60x60 area. */
+/* Clean the social-icons wrapper completely. */
+#hornav > .container ul.social-icons,
+#hornav > .container ul.social-icons.pull-right {
+    display: block !important;
+    width: 60px !important;
+    height: 60px !important;
+    min-height: 60px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    overflow: hidden !important;
+
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Remove the original green/gradient/rounded styling from
+   the GDPR list item. */
+#hornav > .container ul.social-icons li.social-tumblr {
+    display: block !important;
+    position: relative !important;
+
+    width: 60px !important;
+    height: 60px !important;
+    min-height: 60px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* The clickable lock itself. */
 #hornav > .container ul.social-icons li.social-tumblr a {
     display: block !important;
+    position: relative !important;
+
     width: 60px !important;
     height: 60px !important;
+
     margin: 0 !important;
     padding: 0 !important;
-    border: 0 !important;
+
     background-color: transparent !important;
     background-image: url("../img/social_icons/tumblr.png") !important;
     background-position: 8px 7px !important;
     background-repeat: no-repeat !important;
+
+    border: 0 !important;
     border-radius: 0 !important;
-    outline: none !important;
     box-shadow: none !important;
+    outline: none !important;
 }
 
-/* Keep the SlickNav button on the left and the lock
-   in its own 60px area on the right. */
+/* SlickNav occupies the navigation row; leave only the
+   60px lock area on the right. */
 #hornav .slicknav_btn {
     margin-right: 60px !important;
 }
