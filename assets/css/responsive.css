@@ -29,8 +29,8 @@
 
 @media only screen and (max-width: 959px) {
 
-
 }
+
 
 /* #Mobile (Landscape)
 ================================================== */
@@ -47,9 +47,9 @@
 
 /* ==========================================================
    MOBILE NAVIGATION FIX
-   Menu + GDPR lock on the same row
-   This prevents the old navigation container from creating
-   a second 60px-high bar above the slideshow.
+   SlickNav menu + GDPR lock on ONE 60px navigation row.
+   The original desktop .container must not create a second
+   dark/grey bar above the slideshow.
    ========================================================== */
 
 #hornav {
@@ -57,52 +57,90 @@
     min-height: 60px;
 }
 
-/* Keep the old navigation container for the GDPR/lock link,
-   but prevent it from creating a second full-width row. */
+/* The original desktop navigation container is kept only
+   for the GDPR link. Remove its desktop background/height. */
 #hornav > .container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 120px;
-    min-height: 60px;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 60px !important;
+    height: 60px !important;
+    min-height: 0 !important;
     padding: 0 !important;
-    background: transparent;
-    box-shadow: none;
-    z-index: 30;
+    margin: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    z-index: 100 !important;
 }
 
-/* The desktop navigation column is replaced by SlickNav. */
+/* Remove the Bootstrap row from the normal document flow. */
+#hornav > .container > .row {
+    position: static !important;
+    margin: 0 !important;
+    height: 60px !important;
+}
+
+/* Desktop menu column is replaced by SlickNav. */
 #hornav > .container .col-md-8 {
-    display: none;
+    display: none !important;
 }
 
-/* GDPR / lock column */
+/* GDPR column occupies only the lock area. */
 #hornav > .container .col-md-4 {
-    width: 100%;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 60px !important;
+    height: 60px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Remove Bootstrap/desktop spacing from the GDPR list. */
+#hornav > .container ul.social-icons {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 60px !important;
+    height: 60px !important;
+    margin: 0 !important;
     padding: 0 !important;
 }
 
-#hornav ul.social-icons {
+/* The original social icon has 5px margin and 56px size.
+   Remove that so it exactly fills the lock area. */
+#hornav > .container ul.social-icons li {
     float: none !important;
-    margin: 0;
-    padding: 0;
-    height: 60px;
+    display: block !important;
+    width: 60px !important;
+    height: 60px !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-#hornav ul.social-icons li {
-    float: right;
-    margin: 0;
+#hornav > .container ul.social-icons li a {
+    display: block !important;
+    width: 60px !important;
+    height: 60px !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-#hornav ul.social-icons li a {
-    width: 60px;
-    height: 60px;
+/* SlickNav itself forms the complete left side of the bar. */
+#hornav > .slicknav_menu {
+    position: relative !important;
+    width: 100% !important;
+    min-height: 60px !important;
+    box-sizing: border-box !important;
+    padding: 5px !important;
+    margin: 0 !important;
+    z-index: 50 !important;
 }
 
-/* Keep the SlickNav MENU button on the left,
-   leaving room for the GDPR lock on the right. */
-#hornav .slicknav_btn {
-    margin-right: 125px;
+/* Keep the MENU button away from the GDPR lock. */
+#hornav > .slicknav_menu .slicknav_btn {
+    margin-right: 65px !important;
 }
 
 }
@@ -112,6 +150,5 @@
 ================================================== */
 
 @media only screen and (max-width: 440px) {
-
 
 }
