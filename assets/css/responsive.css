@@ -26,7 +26,7 @@
 
 /* #Tablet (Portrait)
 ================================================== */
-    
+
 @media only screen and (max-width: 959px) {
 
 
@@ -44,14 +44,74 @@
     left: 15%;
 }
 
+
+/* ==========================================================
+   MOBILE NAVIGATION FIX
+   Menu + GDPR lock on the same row
+   This prevents the old navigation container from creating
+   a second 60px-high bar above the slideshow.
+   ========================================================== */
+
+#hornav {
+    position: relative;
+    min-height: 60px;
 }
 
-/*  #Mobile (Portrait)
+/* Keep the old navigation container for the GDPR/lock link,
+   but prevent it from creating a second full-width row. */
+#hornav > .container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    min-height: 60px;
+    padding: 0 !important;
+    background: transparent;
+    box-shadow: none;
+    z-index: 30;
+}
+
+/* The desktop navigation column is replaced by SlickNav. */
+#hornav > .container .col-md-8 {
+    display: none;
+}
+
+/* GDPR / lock column */
+#hornav > .container .col-md-4 {
+    width: 100%;
+    padding: 0 !important;
+}
+
+#hornav ul.social-icons {
+    float: none !important;
+    margin: 0;
+    padding: 0;
+    height: 60px;
+}
+
+#hornav ul.social-icons li {
+    float: right;
+    margin: 0;
+}
+
+#hornav ul.social-icons li a {
+    width: 60px;
+    height: 60px;
+}
+
+/* Keep the SlickNav MENU button on the left,
+   leaving room for the GDPR lock on the right. */
+#hornav .slicknav_btn {
+    margin-right: 125px;
+}
+
+}
+
+
+/* #Mobile (Portrait)
 ================================================== */
 
 @media only screen and (max-width: 440px) {
 
-	
+
 }
-
-
