@@ -46,10 +46,14 @@
 
 
 /* ==========================================================
-   MOBILE NAVIGATION FIX v4
+   MOBILE NAVIGATION FIX v5
    Menu + GDPR lock on the same 60px row.
-   The original desktop navigation container is retained only
-   as the clickable GDPR/lock area and has no visual styling.
+
+   IMPORTANT:
+   The original Tumblr sprite is NOT used on mobile.
+   The GDPR link remains clickable, but the old sprite,
+   background, border, gradient and overflow artefacts are
+   completely removed. The lock is drawn with CSS instead.
    ========================================================== */
 
 #hornav {
@@ -57,16 +61,20 @@
     min-height: 60px !important;
 }
 
-/* Remove ALL visual/background/border effects inherited from
-   the desktop navigation container. */
+/* ----------------------------------------------------------
+   1. Old desktop navigation container
+   ---------------------------------------------------------- */
+
 #hornav > .container,
 #hornav > .container.border-bottom {
-    position: absolute;
-    top: 0;
-    right: 0;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+
     width: 60px !important;
     height: 60px !important;
     min-height: 60px !important;
+
     margin: 0 !important;
     padding: 0 !important;
 
@@ -75,33 +83,49 @@
     background-image: none !important;
 
     border: 0 !important;
+    border-radius: 0 !important;
     box-shadow: none !important;
 
-    z-index: 30;
+    overflow: visible !important;
+
+    z-index: 30 !important;
 }
 
-/* Remove Bootstrap row spacing/clearfix effects. */
+/* ----------------------------------------------------------
+   2. Bootstrap row
+   ---------------------------------------------------------- */
+
 #hornav > .container > .row {
     width: 60px !important;
     height: 60px !important;
     min-height: 60px !important;
+
     margin: 0 !important;
     padding: 0 !important;
+
+    background: transparent !important;
+    background-image: none !important;
 }
 
-/* Desktop navigation column is replaced by SlickNav. */
+/* Desktop navigation is replaced by SlickNav. */
 #hornav > .container .col-md-8 {
     display: none !important;
 }
 
-/* GDPR column = exactly the 60x60 lock area. */
+/* ----------------------------------------------------------
+   3. GDPR column
+   ---------------------------------------------------------- */
+
 #hornav > .container .col-md-4 {
     display: block !important;
+
     width: 60px !important;
     height: 60px !important;
     min-height: 60px !important;
+
     margin: 0 !important;
     padding: 0 !important;
+
     float: none !important;
 
     background: transparent !important;
@@ -109,31 +133,42 @@
     background-image: none !important;
 
     border: 0 !important;
+    border-radius: 0 !important;
     box-shadow: none !important;
 }
 
-/* Clean the social-icons wrapper completely. */
+/* ----------------------------------------------------------
+   4. Social-icons wrapper
+   ---------------------------------------------------------- */
+
 #hornav > .container ul.social-icons,
 #hornav > .container ul.social-icons.pull-right {
     display: block !important;
+
     width: 60px !important;
     height: 60px !important;
     min-height: 60px !important;
+
     margin: 0 !important;
     padding: 0 !important;
+
     float: none !important;
-    overflow: hidden !important;
 
     background: transparent !important;
     background-color: transparent !important;
     background-image: none !important;
 
     border: 0 !important;
+    border-radius: 0 !important;
     box-shadow: none !important;
+
+    overflow: visible !important;
 }
 
-/* Remove the original green/gradient/rounded styling from
-   the GDPR list item. */
+/* ----------------------------------------------------------
+   5. GDPR list item
+   ---------------------------------------------------------- */
+
 #hornav > .container ul.social-icons li.social-tumblr {
     display: block !important;
     position: relative !important;
@@ -144,6 +179,7 @@
 
     margin: 0 !important;
     padding: 0 !important;
+
     float: none !important;
 
     background: transparent !important;
@@ -153,9 +189,20 @@
     border: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
+
+    overflow: visible !important;
 }
 
-/* The clickable lock itself. */
+/* ----------------------------------------------------------
+   6. GDPR link
+   ---------------------------------------------------------- */
+
+/*
+   Do NOT use tumblr.png here.
+
+   The old image is a sprite and can leave visual artefacts
+   when combined with the original social-icon CSS.
+*/
 #hornav > .container ul.social-icons li.social-tumblr a {
     display: block !important;
     position: relative !important;
@@ -166,19 +213,78 @@
     margin: 0 !important;
     padding: 0 !important;
 
+    background: transparent !important;
+    background-image: none !important;
     background-color: transparent !important;
-    background-image: url("../img/social_icons/tumblr.png") !important;
-    background-position: 8px 7px !important;
-    background-repeat: no-repeat !important;
 
     border: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
     outline: none !important;
+
+    text-decoration: none !important;
+
+    overflow: hidden !important;
 }
 
-/* SlickNav occupies the navigation row; leave only the
-   60px lock area on the right. */
+/* ----------------------------------------------------------
+   7. CSS LOCK — shackle
+   ---------------------------------------------------------- */
+
+#hornav > .container ul.social-icons li.social-tumblr a::before {
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 21px !important;
+    top: 13px !important;
+
+    width: 16px !important;
+    height: 15px !important;
+
+    box-sizing: border-box !important;
+
+    border: 4px solid #222 !important;
+    border-bottom: 0 !important;
+
+    border-radius: 10px 10px 0 0 !important;
+
+    background: transparent !important;
+
+    z-index: 2 !important;
+}
+
+/* ----------------------------------------------------------
+   8. CSS LOCK — body
+   ---------------------------------------------------------- */
+
+#hornav > .container ul.social-icons li.social-tumblr a::after {
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 19px !important;
+    top: 25px !important;
+
+    width: 22px !important;
+    height: 19px !important;
+
+    box-sizing: border-box !important;
+
+    background: #222 !important;
+
+    border: 0 !important;
+    border-radius: 2px !important;
+
+    box-shadow: none !important;
+
+    z-index: 3 !important;
+}
+
+/* ----------------------------------------------------------
+   9. SlickNav
+   ---------------------------------------------------------- */
+
 #hornav .slicknav_btn {
     margin-right: 60px !important;
 }
